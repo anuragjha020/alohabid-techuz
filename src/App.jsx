@@ -9,12 +9,13 @@ import AppLayout from './ui/AppLayout';
 import { Toaster } from 'react-hot-toast';
 import ProtectedRoute from './ui/ProtectedRoute';
 import Signup from './pages/Signup';
+import ForgetPassword from "./pages/ForgetPassword";
 
 const queryClient = new QueryClient({
   defaultOptions: {
-        queries:{
-          staleTime: 60 * 1000,
-        },
+    queries: {
+      staleTime: 60 * 1000,
+    },
   },
 });
 
@@ -38,6 +39,7 @@ function App() {
 
           <Route path="signup" element={<Signup />} />
           <Route path="login" element={<Login />} />
+          <Route path="forgot-password" element={<ForgetPassword />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
